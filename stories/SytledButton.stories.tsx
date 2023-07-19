@@ -3,6 +3,8 @@ import { StyledButton } from '../components/StyledButton';
 import { action } from '@storybook/addon-actions';
 import { useState } from 'react';
 
+import MDXDocument from './StyledButton.mdx';
+
 const meta: Meta = {
   title: 'StyledButton',
   component: StyledButton,
@@ -15,6 +17,11 @@ const meta: Meta = {
       control: { type: 'text' },
     },
     onClick: { action: 'clicked' },
+  },
+  parameters: {
+    docs: {
+      page: MDXDocument,
+    },
   },
 };
 
