@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { StyledButton } from '../components/StyledButton';
 import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
 import { useState } from 'react';
 
 import MDXDocument from './StyledButton.mdx';
@@ -31,7 +32,11 @@ type Story = StoryObj<typeof StyledButton>;
 
 export const Primary: Story = {
   render: (props) => (
-    <StyledButton {...props} variant='primary'>
+    <StyledButton
+      {...props}
+      variant='primary'
+      onClick={linkTo('StyledButton', 'Success')}
+    >
       Primary
     </StyledButton>
   ),
@@ -39,7 +44,11 @@ export const Primary: Story = {
 
 export const Success: Story = {
   render: (props) => (
-    <StyledButton {...props} variant='success'>
+    <StyledButton
+      {...props}
+      variant='success'
+      onClick={linkTo('StyledButton', 'Transparent')}
+    >
       Success
     </StyledButton>
   ),
@@ -47,7 +56,11 @@ export const Success: Story = {
 
 export const Transparent: Story = {
   render: (props) => (
-    <StyledButton {...props} variant='transparent'>
+    <StyledButton
+      {...props}
+      variant='transparent'
+      onClick={linkTo('StyledButton', 'Primary')}
+    >
       Transparent
     </StyledButton>
   ),
@@ -57,7 +70,7 @@ const increnmentAction = action('increment');
 
 export const PrimaryWithAction: Story = {
   render: (props) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState<Number>(0);
 
     const onClick = (e: React.MouseEvent) => {
       increnmentAction(e, count);
