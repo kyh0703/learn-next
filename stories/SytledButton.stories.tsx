@@ -70,7 +70,7 @@ const increnmentAction = action('increment');
 
 export const PrimaryWithAction: Story = {
   render: (props) => {
-    const [count, setCount] = useState<Number>(0);
+    const [count, setCount] = useState(0);
 
     const onClick = (e: React.MouseEvent) => {
       increnmentAction(e, count);
