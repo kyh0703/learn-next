@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/**
- * Responsive 속성
- */
 export type ResponsiveProp<T> = {
   base?: T
   sm?: T
@@ -9,6 +5,7 @@ export type ResponsiveProp<T> = {
   lg?: T
   xl?: T
 }
+
 export type Responsive<T> = T | ResponsiveProp<T>
 
 /**
