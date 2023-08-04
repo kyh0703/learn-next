@@ -1,4 +1,4 @@
-import { addDecorator } from '@storybook/react'
+import { makeDecorator } from '@storybook/addons'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { theme } from '../src/themes'
 import * as NextImage from 'next/image'
@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 // theme 적용
-addDecorator((story) => (
+makeDecorator((story) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     {story()}
@@ -42,12 +42,12 @@ addDecorator((story) => (
 // next/image 교체
 const OriginalNextImage = NextImage.default
 
-Object.defineProperty(NextImage, 'default', {
-  configurable: true,
-  value: (props) =>
-    typeof props.src === 'string' ? (
-      <OriginalNextImage {...props} unoptimized blurDataURL={props.src} />
-    ) : (
-      <OriginalNextImage {...props} unoptimized />
-    ),
-})
+// Object.defineProperty(NextImage, 'default', {
+//   configurable: true,
+//   value: (props) =>
+//     typeof props.src === 'string' ? (
+//       <OriginalNextImage {...props} unoptimized blurDataURL={props.src} />
+//     ) : (
+//       <OriginalNextImage {...props} unoptimized />
+//     ),
+// })

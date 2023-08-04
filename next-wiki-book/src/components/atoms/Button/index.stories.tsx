@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import Button from './index'
 
-const meta = {
+const meta: Meta<typeof Button> = {
   title: 'Atoms/Button',
+  component: Button,
   argTypes: {
     variant: {
       options: ['primary', 'secondary'],
@@ -23,5 +24,57 @@ const meta = {
         type: { summary: 'string' },
       },
     },
+    disabled: {
+      control: { type: 'boolean' },
+      defaultValue: false,
+      description: '버튼 비활성화 여부',
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    width: {
+      control: { type: 'number' },
+      description: '버튼 너비',
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    height: {
+      control: { type: 'number' },
+      description: '버튼 높이',
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    onClick: {
+      description: '버튼 클릭 이벤트',
+      table: {
+        type: { summary: 'function' },
+      },
+    },
   },
-} satisfies Meta<typeof Button>
+}
+
+export default meta
+type Story = StoryObj<typeof Button>
+
+export const Primary: Story = {
+  args: {
+    variant: 'primary',
+    children: 'Primary Button',
+  },
+}
+
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+    children: 'Secondary Button',
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    children: 'Disabled Button',
+  },
+}
