@@ -49,7 +49,7 @@ export type TextProps = {
 
 const variants = {
   extraSmall: {
-    fontSize: 'x-small',
+    fontSize: 'extraSmall',
     letterSpacing: 0,
     lineHeight: 0,
   },
@@ -74,7 +74,7 @@ const variants = {
     lineHeight: 4,
   },
   extraLarge: {
-    fontSize: 'x-large',
+    fontSize: 'extraLarge',
     letterSpacing: 5,
     lineHeight: 5,
   },
