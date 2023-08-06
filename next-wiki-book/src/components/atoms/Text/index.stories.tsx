@@ -4,6 +4,7 @@ import Text from './index'
 const meta: Meta<typeof Text> = {
   title: 'Atoms/Text',
   component: Text,
+  tags: ['autodocs'],
   argTypes: {
     variant: {
       options: [
