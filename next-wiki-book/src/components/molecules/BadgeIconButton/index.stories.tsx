@@ -1,13 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react'
-import BadgeIconButton from './index'
+
 import {
   PersonIcon,
   SearchIcon,
   ShoppingCartIcon,
 } from 'components/atoms/IconButton'
+import BadgeIconButton from './index'
 
-const meta: Meta = {
+const meta: Meta<typeof BadgeIconButton> = {
   title: 'Molecules/BadgeIconButton',
+  component: BadgeIconButton,
   tags: ['autodocs'],
   argTypes: {
     icon: {

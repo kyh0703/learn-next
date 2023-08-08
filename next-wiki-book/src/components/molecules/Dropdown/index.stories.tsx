@@ -1,9 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react'
+
 import Dropdown from './index'
 
 const meta: Meta<typeof Dropdown> = {
   title: 'Molecules/Dropdown',
   component: Dropdown,
+  tags: ['autodocs'],
   argTypes: {
     options: {
       control: { type: 'array' },
